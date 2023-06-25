@@ -9,7 +9,7 @@ export default function MessageInput() {
 
   return (
     <form
-      className='w-full h-10 rounded-xl shadow-sm flex items-center px-4'
+      className='w-full h-10 rounded-xl shadow-sm flex items-center px-4 shadow-md'
       onSubmit={onSubmit}
     >
       <input
