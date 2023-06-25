@@ -25,7 +25,7 @@ export default function UsernameInput() {
   }
 
   return (
-    <div className='w-[90%] flex'>
+    <div className='w-full flex flex-wrap gap-y-1.5'>
       <form
         className='w-full h-11 bg-more-smooth rounded-md shadow-sm flex items-center px-4'
         onSubmit={onSubmit}
@@ -39,7 +39,7 @@ export default function UsernameInput() {
         />
       </form>
       <button
-        className='ml-3 bg-backdrop-blue p-2 px-2.5 rounded-md text-blue hover:text-opacity-70 transition-all shadow-md'
+        className='flex-auto flex justify-center bg-backdrop-blue p-2 px-2.5 rounded-md text-blue hover:text-opacity-70 transition-all shadow-md'
         onClick={setUsernameRequest}
       >
         <BsArrowRightCircleFill size={22} />
