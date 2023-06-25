@@ -22,7 +22,7 @@ const userMessages: MessageT[] = [
     username: 'guivialle',
     text: 'Corrupti alias reprehenderit accusamus deserunt. Asperiores neque provident aliquid nam molestiae!',
     date: new Date(),
-    currentUser: true,
+    currentUser: false,
   },
   {
     username: 'guivialle',
@@ -34,20 +34,20 @@ const userMessages: MessageT[] = [
     username: 'guivialle',
     text: 'Corrupti alias reprehenderit accusamus deserunt. Asperiores neque provident aliquid nam molestiae!',
     date: new Date(),
-    currentUser: true,
+    currentUser: false,
   },
   {
     username: 'guivialle',
     text: 'Corrupti alias reprehenderit accusamus deserunt. Asperiores neque provident aliquid nam molestiae!',
     date: new Date(),
-    currentUser: true,
+    currentUser: false,
   },
 ]
 
 export default function Root() {
   return (
     <main className='w-screen h-screen bg-default'>
-      <section className='w-full h-[10%] bg-smooth  shadow-md rounded-b-3xl p-8 flex flex-col justify-between'>
+      <section className='w-full h-[10%] bg-smooth  shadow-md rounded-b-3xl p-8 flex flex-col justify-between relative z-10'>
         <div className='relative flex items-center justify-center'>
           <i className='absolute left-0'>
             <BsArrowLeft size={21} />
@@ -55,7 +55,7 @@ export default function Root() {
           <h1 className='text-lg'>Person name</h1>
         </div>
       </section>
-      <section className='w-full h-[80%] flex flex-col overflow-y-auto gap-y-4 p-3'>
+      <section className='w-full h-[80%] flex flex-col overflow-y-auto gap-y-4 p-4 shadow-md'>
         {userMessages.map((message, index, arr) => {
           return (
             <React.Fragment key={randomUUID()}>
