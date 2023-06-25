@@ -28,7 +28,7 @@ export default function Message({ message }: Props) {
             currentUser ? 'text-right mr-1.5' : 'text-left ml-1.5'
           }`}
         >
-          {date.toLocaleString('en-US', {
+          {new Date(date).toLocaleString('en-US', {
             hour: 'numeric',
             minute: 'numeric',
             hour12: true,

@@ -2,39 +2,39 @@
 
 import { totalMessagesAtom } from '@/contexts/totalMessagesAtom'
 import { userAtom } from '@/contexts/userAtom'
+import { socket } from '@/services/api'
 import { useAtom } from 'jotai'
-import { useRef } from 'react'
+import { useEffect, useRef, memo } from 'react'
 import { BiSolidSend } from 'react-icons/bi'
 
-export default function MessageInput() {
+function MessageInput() {
   const inputRef = useRef<HTMLInputElement>(null)
   const [user] = useAtom(userAtom)
   const [messages, setMessages] = useAtom(totalMessagesAtom)
+
+  const sendMessageRequest = (message: any) => {
+    socket.emit('send message', message)
+  }
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     sendMessage()
   }
 
-  function sendMessage() {
+  async function sendMessage() {
     if (inputRef.current) {
       const text = inputRef.current.value
 
       if (text) {
         if (user) {
-          setMessages((prev) => {
-            return [
-              ...prev,
-              {
-                id: user?.id,
-                currentUser: true,
-                date: new Date(),
-                text,
-                username: user?.username ?? 'random-user',
-              },
-            ]
-          })
+          const newMessage = {
+            id: user?.id,
+            date: new Date(),
+            text,
+            username: user?.username ?? 'random-user',
+          }
 
+          await sendMessageRequest(newMessage)
           inputRef.current.value = ''
         }
       }
@@ -58,3 +58,5 @@ export default function MessageInput() {
     </form>
   )
 }
+
+export default memo(MessageInput)

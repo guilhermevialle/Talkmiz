@@ -4,13 +4,34 @@ import { totalMessagesAtom } from '@/contexts/totalMessagesAtom'
 import { useAtom } from 'jotai'
 import React from 'react'
 import Message from './Message'
-import { randomUUID } from 'crypto'
 import { v4 } from 'uuid'
+import { useEffect, memo } from 'react'
+import { socket } from '@/services/api'
+import { userAtom } from '@/contexts/userAtom'
+import { MessageT } from '@/types'
 
-export default function Messages() {
-  const [messages] = useAtom(totalMessagesAtom)
+function Messages() {
+  const [messages, setMessages] = useAtom(totalMessagesAtom)
+  const [user] = useAtom(userAtom)
 
-  console.log({ messages })
+  useEffect(() => {
+    socket.connect()
+
+    socket.on('send message', (message: MessageT) => {
+      if (user) {
+        const userMatches = message.id == user?.id
+        console.log({ user, message, userMatches })
+
+        setMessages((prev) => {
+          return [...prev, { ...message, currentUser: userMatches }]
+        })
+      }
+    })
+
+    return () => {
+      socket.disconnect()
+    }
+  }, [user])
 
   return (
     <section className='w-full h-[80%] flex flex-col overflow-y-auto p-4 shadow-md'>
@@ -35,3 +56,5 @@ export default function Messages() {
     </section>
   )
 }
+
+export default memo(Messages)
