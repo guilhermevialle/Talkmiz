@@ -9,12 +9,7 @@
   "routes": [
     {
       "src": "(.*)",
-      "dest": "./src/core.ts"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/(.*)",
+      "dest": "./src/core.ts",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
