@@ -8,27 +8,11 @@ const port = process.env.PORT || 9090
 const expressServer = express()
 const httpServer = http.createServer(expressServer)
 
-const io = new Server(httpServer, {
-  cors: {
-    origin: 'https://talkonline-app.vercel.app',
-    credentials: true,
-  },
-})
+const io = new Server(httpServer)
 
 expressServer.use(allowCors)
 expressServer.use(express.urlencoded({ extended: true }))
 expressServer.use(express.json())
-
-expressServer.options('/*', (req, res) => {
-  res.set({
-    'Access-Control-Allow-Credentials': 'true',
-    'Access-Control-Allow-Origin': 'https://talkonline-app.vercel.app',
-    'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
-    'Access-Control-Allow-Headers':
-      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-  })
-  res.status(200).send()
-})
 
 const users: MessageT[] = []
 
