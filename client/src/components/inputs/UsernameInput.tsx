@@ -2,12 +2,13 @@
 
 import { useRef } from 'react'
 import { BsArrowRightCircleFill } from 'react-icons/bs'
-import { usernameAtom } from '@/contexts/usernameAtom'
+import { userAtom } from '@/contexts/userAtom'
 import { useAtom } from 'jotai'
+import { v4 } from 'uuid'
 
 export default function UsernameInput() {
   const inputRef = useRef<HTMLInputElement>(null)
-  const [username, setUsername] = useAtom(usernameAtom)
+  const [user, setUser] = useAtom(userAtom)
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -19,7 +20,7 @@ export default function UsernameInput() {
       const value = inputRef.current.value
 
       if (value && value.length > 2) {
-        setUsername(value)
+        setUser({ id: v4(), username: value })
       }
     }
   }
