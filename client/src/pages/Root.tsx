@@ -2,6 +2,8 @@ import Message from '@/components/Message'
 import MessageInput from '@/components/inputs/MessageInput'
 import { MessageT } from '@/types'
 import { BsArrowLeft } from 'react-icons/bs'
+import React from 'react'
+import { randomUUID } from 'crypto'
 
 const userMessages: MessageT[] = [
   {
@@ -56,11 +58,11 @@ export default function Root() {
       <section className='w-full h-[80%] flex flex-col overflow-y-auto gap-y-4 p-3'>
         {userMessages.map((message, index, arr) => {
           return (
-            <>
+            <React.Fragment key={randomUUID()}>
               {index == 0 && <div className='mt-2'></div>}
               <Message message={message} />
               {index == arr.length - 1 && <div className='mt-2'></div>}
-            </>
+            </React.Fragment>
           )
         })}
       </section>
