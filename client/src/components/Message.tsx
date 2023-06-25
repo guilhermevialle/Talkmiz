@@ -11,9 +11,9 @@ export default function Message({ message }: Props) {
   return (
     <main className={`w-full h-fit flex ${currentUser && 'justify-end'} `}>
       <div className='w-fit h-fit flex flex-col'>
-        <div className='max-w-[230px] h-fit bg-more-smooth rounded-lg p-3 shadow-md'>
+        <div className='max-w-[230px] h-fit bg-more-smooth rounded-lg px-3 py-2 shadow-md'>
           <h1 className='font-medium text-sm text-rose-400'>{username}</h1>
-          <p className='w-full text-[13px] mt-2'>
+          <p className='w-full text-[13px] mt-1'>
             <Balancer>{text}</Balancer>
           </p>
         </div>
