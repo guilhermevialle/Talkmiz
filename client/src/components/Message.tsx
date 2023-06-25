@@ -19,8 +19,8 @@ export default function Message({ message }: Props) {
           >
             {username}
           </h1>
-          <p className='w-full text-[13px] mt-1 font-light text-neutral-300'>
-            <Balancer>{text}</Balancer>
+          <p className='w-full text-[13px] mt-1 font-light text-neutral-300 whitespace-break-spaces'>
+            {text}
           </p>
         </div>
         <span
