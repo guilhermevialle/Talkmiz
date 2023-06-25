@@ -2,6 +2,7 @@ import { MessageT } from './types'
 import express from 'express'
 import { Server } from 'socket.io'
 import http from 'http'
+import allowCors from './middlewares/VercelCors'
 
 const port = process.env.PORT || 9090
 const expressServer = express()

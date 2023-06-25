@@ -13,4 +13,4 @@ const allowCors = (req, res, next) => {
   next()
 }
 
-module.exports = allowCors
+export default allowCors
