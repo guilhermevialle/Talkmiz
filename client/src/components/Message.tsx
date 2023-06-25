@@ -18,7 +18,7 @@ export default function Message({ message }: Props) {
           </p>
         </div>
         <span
-          className={`italic text-[12px] text-zinc-500 mt-1 ${
+          className={`italic text-[11px] text-zinc-500 mt-0.5 ${
             currentUser ? 'text-right mr-1.5' : 'text-left ml-1.5'
           }`}
         >
