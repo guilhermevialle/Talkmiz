@@ -12,6 +12,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: 'https://talkonline-app.vercel.app',
     credentials: true,
+    allowedHeaders: ['Access-Control-Allow-Origin'],
   },
 })
 
