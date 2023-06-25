@@ -14,7 +14,7 @@ export default function Message({ message }: Props) {
         <div className='min-w-[200px] max-w-[230px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-2 shadow-md'>
           <h1
             className={`font-medium text-sm ${
-              currentUser ? 'text-violet-400' : 'text-slate-400'
+              currentUser ? 'text-violet-300' : 'text-lime-300'
             }`}
           >
             {username}
