@@ -17,7 +17,7 @@ export default function MessageInput() {
         type='text'
         placeholder='Type your message...'
       />
-      <button className='ml-3 bg-backdrop-blue p-1.5 rounded-md text-blue hover:text-opacity-70 transition-all'>
+      <button className='ml-3 bg-backdrop-blue p-2 rounded-md text-blue hover:text-opacity-70 transition-all shadow-md'>
         <BiSolidSend size={22} />
       </button>
     </form>
