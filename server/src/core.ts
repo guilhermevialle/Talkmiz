@@ -2,15 +2,18 @@ import { MessageT } from './types'
 import express from 'express'
 import { Server } from 'socket.io'
 import http from 'http'
-import allowCors from './middlewares/VercelCors'
 
 const port = process.env.PORT || 9090
 const expressServer = express()
 const httpServer = http.createServer(expressServer)
 
-const io = new Server(httpServer)
+const io = new Server(httpServer, {
+  cors: {
+    origin: 'https://talkonline-app.vercel.app',
+    credentials: true,
+  },
+})
 
-expressServer.use(allowCors)
 expressServer.use(express.urlencoded({ extended: true }))
 expressServer.use(express.json())
 

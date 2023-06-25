@@ -1,8 +1,5 @@
 import { io } from 'socket.io-client'
 
-export const socket = io('https://talkonline-app-api.vercel.app', {
+export const socket = io('http://localhost:9090', {
   withCredentials: true,
-  extraHeaders: {
-    'Access-Control-Allow-Origin': 'true',
-  },
 })
