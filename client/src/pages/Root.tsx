@@ -53,12 +53,21 @@ export default function Root() {
           <h1 className='text-lg'>Chat</h1>
         </div>
       </section>
-      <section className='w-full h-[80%] flex flex-col overflow-y-auto gap-y-4 p-4 shadow-md'>
+      <section className='w-full h-[80%] flex flex-col overflow-y-auto p-4 shadow-md'>
         {userMessages.map((message, index, arr) => {
           return (
             <React.Fragment key={randomUUID()}>
               {index == 0 && <div className='mt-2'></div>}
+
               <Message message={message} />
+
+              {arr[index + 1] &&
+              arr[index + 1].currentUser !== message.currentUser ? (
+                <div className='my-4'></div>
+              ) : (
+                <div className='my-0.5'></div>
+              )}
+
               {index == arr.length - 1 && <div className='mt-2'></div>}
             </React.Fragment>
           )
