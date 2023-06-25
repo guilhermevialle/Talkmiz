@@ -25,7 +25,7 @@ export default function UsernameInput() {
   }
 
   return (
-    <div className='w-full flex'>
+    <div className='w-[90%] flex'>
       <form
         className='w-full h-11 bg-more-smooth rounded-md shadow-sm flex items-center px-4'
         onSubmit={onSubmit}
