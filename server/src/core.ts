@@ -6,6 +6,7 @@ import http from 'http'
 const port = process.env.PORT || 9090
 const expressServer = express()
 const httpServer = http.createServer(expressServer)
+
 const io = new Server(httpServer, {
   cors: {
     origin: 'https://talkonline-app.vercel.app',
@@ -13,6 +14,7 @@ const io = new Server(httpServer, {
   },
 })
 
+expressServer.use(allowCors)
 expressServer.use(express.urlencoded({ extended: true }))
 expressServer.use(express.json())
 
