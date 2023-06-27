@@ -9,7 +9,7 @@ Talkmiz is ​​a real-time messaging application that allows users from all ov
 
 ## Preview
 
-![]()
+![](./preview/talkmiz_preview.gif)
 
 ## Technologies Used
 
