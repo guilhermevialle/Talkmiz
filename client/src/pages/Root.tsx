@@ -3,6 +3,7 @@ import { MessageT } from '@/types'
 import React from 'react'
 import UsernameRequest from '@/components/UsernameRequest'
 import Messages from '@/components/Messages'
+import Padding from '@/components/responsive/Padding'
 
 export default function Root() {
   return (
@@ -13,9 +14,15 @@ export default function Root() {
           <h1 className='text-lg'>Chat</h1>
         </div>
       </section>
+
       <Messages />
-      <section className='w-full h-[10%] bg-default-plus flex items-center'>
-        <MessageInput />
+
+      <section className='w-full h-[10%] bg-default-plus'>
+        <Padding>
+          <main className='w-full h-full flex items-center'>
+            <MessageInput />
+          </main>
+        </Padding>
       </section>
     </main>
   )

@@ -9,6 +9,7 @@ import { useEffect, memo } from 'react'
 import { socket } from '@/services/api'
 import { userAtom } from '@/contexts/userAtom'
 import { MessageT } from '@/types'
+import Padding from './responsive/Padding'
 
 function Messages() {
   const [messages, setMessages] = useAtom(totalMessagesAtom)
@@ -33,25 +34,29 @@ function Messages() {
   }, [user])
 
   return (
-    <section className='w-full h-[80%] flex flex-col overflow-y-auto p-4 shadow-md'>
-      {messages.map((message, index, arr) => {
-        return (
-          <React.Fragment key={v4()}>
-            {index == 0 && <div className='mt-2'></div>}
+    <section className='w-full h-[80%] '>
+      <Padding>
+        <main className='w-full h-full flex flex-col overflow-y-auto p-4 shadow-md'>
+          {messages.map((message, index, arr) => {
+            return (
+              <React.Fragment key={v4()}>
+                {index == 0 && <div className='mt-2'></div>}
 
-            <Message message={message} />
+                <Message message={message} />
 
-            {arr[index + 1] &&
-            arr[index + 1].currentUser !== message.currentUser ? (
-              <div className='my-4'></div>
-            ) : (
-              <div className='my-0.5'></div>
-            )}
+                {arr[index + 1] &&
+                arr[index + 1].currentUser !== message.currentUser ? (
+                  <div className='my-4'></div>
+                ) : (
+                  <div className='my-0.5'></div>
+                )}
 
-            {index == arr.length - 1 && <div className='mt-2'></div>}
-          </React.Fragment>
-        )
-      })}
+                {index == arr.length - 1 && <div className='mt-2'></div>}
+              </React.Fragment>
+            )
+          })}
+        </main>
+      </Padding>
     </section>
   )
 }
