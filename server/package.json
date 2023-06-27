@@ -11,7 +11,11 @@
     "typescript": "^5.1.3"
   },
   "scripts": {
-    "dev": "tsnd --respawn --transpile-only --clear --quiet src/core.ts"
+    "dev": "tsnd --respawn --transpile-only --clear --quiet src/core.ts",
+    "build": "tsc",
+    "start": "node dist/core.js",
+    "docker-build": "docker build -t server .",
+    "docker-start": "docker run -p 9090:9090 server"
   },
   "author": "",
   "license": "ISC",
