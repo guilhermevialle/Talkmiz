@@ -20,7 +20,6 @@ function Messages() {
     socket.on('send message', (message: MessageT) => {
       if (user) {
         const userMatches = message.id == user?.id
-        console.log({ user, message, userMatches })
 
         setMessages((prev) => {
           return [...prev, { ...message, currentUser: userMatches }]
