@@ -15,7 +15,7 @@ export default function Message({ message, nextMessage }: Props) {
         <div className='min-w-[200px] max-w-[230px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-2 shadow-md'>
           {!currentUser && (
             <h1
-              className={`font-normal text-sm ${
+              className={`font-medium text-[13px] ${
                 currentUser ? 'text-violet-300' : 'text-lime-300'
               }`}
             >
