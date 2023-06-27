@@ -23,7 +23,7 @@ export default function Message({ message, nextMessage }: Props) {
             </h1>
           )}
 
-          <pre className='w-[90%] text-[13px] font-light text-neutral-300 whitespace-normal break-words'>
+          <p className='w-[90%] text-[13px] font-light text-neutral-300 whitespace-normal'>
             {text}
             {nextMessage?.currentUser !== currentUser && (
               <span
@@ -38,7 +38,7 @@ export default function Message({ message, nextMessage }: Props) {
                   .replace(/ AM| PM/g, '')}
               </span>
             )}
-          </pre>
+          </p>
         </div>
       </div>
     </main>
