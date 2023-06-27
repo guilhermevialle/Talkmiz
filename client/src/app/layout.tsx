@@ -7,8 +7,9 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Chat app',
-  description: 'Chat',
+  title: 'Talkmiz',
+  description:
+    'Talkmiz, the app where everyone in the world can communicate quickly and easily. Come meet and share with your friends!',
 }
 
 export default function RootLayout({
