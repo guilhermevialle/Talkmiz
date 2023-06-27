@@ -7,9 +7,11 @@ const port = process.env.PORT || 9090
 const expressServer = express()
 const httpServer = http.createServer(expressServer)
 
+const origins = ['http://localhost:3000', 'https://talkonline-app.vercel.app']
+
 const io = new Server(httpServer, {
   cors: {
-    origin: 'https://talkonline-app.vercel.app',
+    origin: origins,
     credentials: true,
   },
 })
