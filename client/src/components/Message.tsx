@@ -23,23 +23,25 @@ export default function Message({ message, nextMessage }: Props) {
             </h1>
           )}
 
-          <p className='w-full text-[13px] font-light text-neutral-300 whitespace-break-spaces'>
-            {text}
+          <p className='w-full text-[13px] font-light text-neutral-300'>
+            <Balancer>{text}</Balancer>
+            {nextMessage?.currentUser !== currentUser && (
+              <span
+                className={`italic text-[11px] text-zinc-500 mt-0.5 float-right ${
+                  currentUser ? 'text-right mr-1.5' : 'text-left ml-1.5'
+                }`}
+              >
+                {new Date(date)
+                  .toLocaleString('en-US', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true,
+                  })
+                  .replace(/ AM| PM/g, '')}
+              </span>
+            )}
           </p>
         </div>
-        {nextMessage?.currentUser !== currentUser && (
-          <span
-            className={`italic text-[11px] text-zinc-500 mt-0.5 ${
-              currentUser ? 'text-right mr-1.5' : 'text-left ml-1.5'
-            }`}
-          >
-            {new Date(date).toLocaleString('en-US', {
-              hour: 'numeric',
-              minute: 'numeric',
-              hour12: true,
-            })}
-          </span>
-        )}
       </div>
     </main>
   )
