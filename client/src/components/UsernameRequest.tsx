@@ -14,7 +14,7 @@ export default function UsernameRequest() {
       <Padding>
         <main className='w-full h-full flex items-center justify-center z-20 flex-col p-4 gap-y-3'>
           <h1 className='text-xl'>
-            <Balancer>Whats your name (or nickname)?</Balancer>
+            <Balancer>Enter your name or nickname</Balancer>
           </h1>
           <UsernameInput />
         </main>
