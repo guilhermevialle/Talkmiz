@@ -9,7 +9,7 @@ const httpServer = http.createServer(expressServer)
 
 const io = new Server(httpServer, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://talkonline-app.vercel.app',
     credentials: true,
   },
 })
