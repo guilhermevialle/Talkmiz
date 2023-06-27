@@ -23,11 +23,11 @@ export default function Message({ message, nextMessage }: Props) {
             </h1>
           )}
 
-          <p className='w-full text-[13px] font-light text-neutral-300'>
-            <Balancer>{text}</Balancer>
+          <pre className='w-[90%] text-[13px] font-light text-neutral-300 whitespace-normal break-words'>
+            {text}
             {nextMessage?.currentUser !== currentUser && (
               <span
-                className={`italic text-[11px] text-zinc-500 mt-0.5 float-right pl-3`}
+                className={`italic text-[10px] text-zinc-500 mt-0.5 float-right pl-3`}
               >
                 {new Date(date)
                   .toLocaleString('en-US', {
@@ -38,7 +38,7 @@ export default function Message({ message, nextMessage }: Props) {
                   .replace(/ AM| PM/g, '')}
               </span>
             )}
-          </p>
+          </pre>
         </div>
       </div>
     </main>

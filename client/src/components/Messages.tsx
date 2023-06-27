@@ -2,7 +2,7 @@
 
 import { totalMessagesAtom } from '@/contexts/totalMessagesAtom'
 import { useAtom } from 'jotai'
-import React from 'react'
+import React, { useRef } from 'react'
 import Message from './Message'
 import { v4 } from 'uuid'
 import { useEffect, memo } from 'react'
@@ -14,6 +14,7 @@ import Padding from './responsive/Padding'
 function Messages() {
   const [messages, setMessages] = useAtom(totalMessagesAtom)
   const [user] = useAtom(userAtom)
+  const messagesBoxRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     socket.connect()
@@ -33,10 +34,23 @@ function Messages() {
     }
   }, [user])
 
+  useEffect(() => {
+    const scrollToBottom = () => {
+      if (messagesBoxRef.current) {
+        messagesBoxRef.current.scrollTop = messagesBoxRef.current.scrollHeight
+      }
+    }
+
+    scrollToBottom()
+  }, [messages])
+
   return (
     <section className='w-full h-[80%] '>
       <Padding>
-        <main className='w-full h-full flex flex-col overflow-y-auto p-4 shadow-md'>
+        <main
+          className='w-full h-full flex flex-col overflow-y-auto p-4 shadow-md'
+          ref={messagesBoxRef}
+        >
           {messages.map((message, index, arr) => {
             return (
               <React.Fragment key={v4()}>
