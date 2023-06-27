@@ -14,6 +14,7 @@ export default function UsernameInput() {
 
   const allowedChars = z
     .string()
+    .max(30, 'Maximum input is 30.')
     .min(3, 'Minimum input is 3.')
     .regex(
       /^[a-zA-Z0-9\s]*$/,
