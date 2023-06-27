@@ -42,7 +42,7 @@ function Messages() {
               <React.Fragment key={v4()}>
                 {index == 0 && <div className='mt-2'></div>}
 
-                <Message message={message} />
+                <Message message={message} nextMessage={arr[index + 1]} />
 
                 {arr[index + 1] &&
                 arr[index + 1].currentUser !== message.currentUser ? (
