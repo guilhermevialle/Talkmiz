@@ -12,7 +12,7 @@ export default function Message({ message, nextMessage }: Props) {
   return (
     <main className={`w-full h-fit flex ${currentUser && 'justify-end'} `}>
       <div className='w-fit h-fit flex flex-col'>
-        <div className='min-w-[200px] max-w-[230px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-1.5 shadow-md'>
+        <div className='min-w-[34px] max-w-[240px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-1.5 shadow-md'>
           {!currentUser && (
             <h1
               className={`font-medium text-[13px] ${
@@ -27,9 +27,7 @@ export default function Message({ message, nextMessage }: Props) {
             <Balancer>{text}</Balancer>
             {nextMessage?.currentUser !== currentUser && (
               <span
-                className={`italic text-[11px] text-zinc-500 mt-0.5 float-right ${
-                  currentUser ? 'text-right mr-1.5' : 'text-left ml-1.5'
-                }`}
+                className={`italic text-[11px] text-zinc-500 mt-0.5 float-right pl-3`}
               >
                 {new Date(date)
                   .toLocaleString('en-US', {
