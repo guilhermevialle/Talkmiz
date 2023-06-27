@@ -12,7 +12,7 @@ export default function Message({ message, nextMessage }: Props) {
   return (
     <main className={`w-full h-fit flex ${currentUser && 'justify-end'} `}>
       <div className='w-fit h-fit flex flex-col'>
-        <div className='min-w-[200px] max-w-[230px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-2 shadow-md'>
+        <div className='min-w-[200px] max-w-[230px] w-fit h-fit bg-more-smooth bg-opacity-75 rounded-lg px-3 py-1.5 shadow-md'>
           {!currentUser && (
             <h1
               className={`font-medium text-[13px] ${
@@ -23,7 +23,7 @@ export default function Message({ message, nextMessage }: Props) {
             </h1>
           )}
 
-          <p className='w-full text-[13px] mt-1 font-light text-neutral-300 whitespace-break-spaces'>
+          <p className='w-full text-[13px] font-light text-neutral-300 whitespace-break-spaces'>
             {text}
           </p>
         </div>
