@@ -9,7 +9,7 @@ const http_1 = __importDefault(require("http"));
 const port = process.env.PORT || 9090;
 const expressServer = (0, express_1.default)();
 const httpServer = http_1.default.createServer(expressServer);
-const origins = ['http://localhost:3000', 'https://talkonline-app.vercel.app'];
+const origins = ['http://localhost:3000', 'https://talkmiz.vercel.app'];
 const io = new socket_io_1.Server(httpServer, {
     cors: {
         origin: origins,
