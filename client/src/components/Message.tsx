@@ -23,8 +23,13 @@ export default function Message({ message, nextMessage }: Props) {
             </h1>
           )}
 
-          <p className='w-[90%] text-[13px] font-light text-neutral-300 whitespace-normal'>
+          <p className='text-[13px] font-light text-neutral-300 whitespace-normal'>
             {text}
+            <span
+              className={`italic text-[10px] text-zinc-500 float-right pl-3`}
+            >
+              {'    '}
+            </span>
             {nextMessage?.currentUser !== currentUser && (
               <span
                 className={`italic text-[10px] text-zinc-500 mt-0.5 float-right pl-3`}
