@@ -19,12 +19,6 @@ expressServer.use(express.json())
 
 const users: MessageT[] = []
 
-expressServer.get('/', (req, res) => {
-  res.json({
-    status: 'Sem CORS.',
-  })
-})
-
 io.on('connection', (socket) => {
   console.log('connected')
 
