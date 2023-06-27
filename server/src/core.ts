@@ -9,7 +9,7 @@ const httpServer = http.createServer(expressServer)
 
 const io = new Server(httpServer, {
   cors: {
-    origin: 'https://talkonline-app.vercel.app',
+    origin: 'http://localhost:3000',
     credentials: true,
   },
 })
@@ -18,6 +18,12 @@ expressServer.use(express.urlencoded({ extended: true }))
 expressServer.use(express.json())
 
 const users: MessageT[] = []
+
+expressServer.get('/', (req, res) => {
+  res.json({
+    status: 'Sem CORS.',
+  })
+})
 
 io.on('connection', (socket) => {
   console.log('connected')
