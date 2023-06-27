@@ -26,4 +26,4 @@ Talkmiz is ​​a real-time messaging application that allows users from all ov
 
 ## Contributing
 
-Contributions to Fotoseek are welcome! If you find any bugs, issues, or have suggestions for improvement, please open an issue on the project's GitHub repository. If you would like to contribute code, feel free to open a pull request.
+Contributions to Talkmiz are welcome! If you find any bugs, issues, or have suggestions for improvement, please open an issue on the project's GitHub repository. If you would like to contribute code, feel free to open a pull request.
