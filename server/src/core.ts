@@ -21,6 +21,10 @@ expressServer.use(express.json())
 
 const users: MessageT[] = []
 
+expressServer.get('/', (req, res) => {
+  res.sendStatus(200)
+})
+
 io.on('connection', (socket) => {
   console.log('connected')
 
