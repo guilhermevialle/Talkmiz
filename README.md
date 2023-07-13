@@ -1,7 +1,6 @@
 # Talkmiz
 
-Talkmiz is ​​a real-time messaging application that allows users from all over the world to communicate quickly and easily.
-
+Talkmiz is ​​a real-time messaging application that allows users from all over the world to communicate quickly and easily. Check out [Talkmiz](https://talkmiz.vercel.app/).
 ## Features
 
 - Real-time.
